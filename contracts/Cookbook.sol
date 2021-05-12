@@ -1,4 +1,5 @@
 pragma solidity ^0.5.0;
+pragma experimental ABIEncoderV2;
 
 contract Cookbook {
     struct Recipe {
@@ -18,5 +19,9 @@ contract Cookbook {
             });
 
         recipes.push(newRecipe);
+    }
+
+    function getRecipes() public view returns (Recipe[] memory) {
+        return recipes;
     }
 }
